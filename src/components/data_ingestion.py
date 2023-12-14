@@ -10,7 +10,8 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
-from src.components.model_trainer import ModelTrainerConfigfrom src.components.model_trainer import ModelTrainer
+#from src.components.model_trainer import ModelTrainerConfigfrom src.components.model_trainer import ModelTrainer
+
 @dataclass     # using this we can define variables directly without init
 class DataIngestionConfig:              #we create this class for where we save test,train,raw data these kind of information
     train_data_path: str=os.path.join('artifacts',"train.csv")  # all output files save here
@@ -53,7 +54,7 @@ if __name__=="__main__":        # here we initiate and run it
     train_data,test_data=obj.initiate_data_ingestion()
 
     data_transformation=DataTransformation()
-    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+    data_transformation.initiate_data_transformation(train_data,test_data)
 
-    modeltrainer=ModelTrainer()
-    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+   # modeltrainer=ModelTrainer()
+    #print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
