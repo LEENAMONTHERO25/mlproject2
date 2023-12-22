@@ -30,6 +30,7 @@ def predict_datapoint():
 
             lunch=request.form.get('lunch'),
             test_preparation_course=request.form.get('test preparation course'),
+            
             reading_score=float(request.form.get('writing score')),
             writing_score=float(request.form.get('reading score'))
 
