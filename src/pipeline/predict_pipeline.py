@@ -5,7 +5,7 @@ from src.utils import load_object
 
 
 class PredictPipeline:
-    def __init__(self):
+    def __init__(self):   #empty constructor
         pass
 
     def predict(self,features):
@@ -26,14 +26,20 @@ class PredictPipeline:
 
 
 class CustomData:
+
     def __init__(  self,
         gender: str,
         race_ethnicity: str,
-        parental_level_of_education,
+        parental_level_of_education: str,
         lunch: str,
         test_preparation_course: str,
         reading_score: int,
         writing_score: int):
+    
+    
+
+    
+    
 
         self.gender = gender
 
@@ -53,11 +59,11 @@ class CustomData:
         try:
             custom_data_input_dict = {
                 "gender": [self.gender],
-                "race_ethnicity": [self.race_ethnicity],
-                "parental_level_of_education": [self.parental_level_of_education],
+                "race/ethnicity": [self.race/ethnicity],
+                "parental_level_of_ducation": [self.parental_level_of_education],
                 "lunch": [self.lunch],
                 "test_preparation_course": [self.test_preparation_course],
-                "reading_score": [self.reading_score],
+                "reading_score": [self.reading_core],
                 "writing_score": [self.writing_score],
             }
 
